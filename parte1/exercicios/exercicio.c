@@ -3,7 +3,6 @@
 
 #include <stdio.h> // Importando biblioteca de entrada e saída
 
-
 // Função Principal/main
 int main() {
     
@@ -12,27 +11,26 @@ int main() {
     int ocupado[10] = {0}; // Lista de quartos ocupados: 10 linhas -> 10 quartos; 0 = livre; 1 = ocupado; todos começam livres
 
     // Serão 3 quartos para locação:
-    for (int i = 0; i < 4; i++){
+    for (int i = 0; i < 3; i++){
         printf("Número do quarto a ser locado (0-9): ");
         int numeroDoQuarto;
         scanf("%d", &numeroDoQuarto);
+        while (getchar() != '\n'); // Limpa o buffer do teclado para evitar problemas com fgets
         
-        // Adicionar um verificador de quarto ocupado?
-        
-        printf("Digite o seu nome do locatário: ");
+        printf("Digite o nome do locatário: ");
         fgets(quartos[numeroDoQuarto][0], sizeof(quartos[numeroDoQuarto][0]), stdin);
         
-        printf("Digite o seu email do locatário: ");
+        printf("Digite o email do locatário: ");
         fgets(quartos[numeroDoQuarto][1], sizeof(quartos[numeroDoQuarto][1]), stdin);
 
-        if(quartos[numeroDoQuarto] != '\O') {
-            quartos[numeroDoQuarto] = dadosLocatario;
-        }
+        // Adicionar um verificador de quarto ocupado?
+        ocupado[numeroDoQuarto] = 1; // Marca o quarto como ocupado
     }
 
+    // Mostra os quartos ocupados na tela:
     for (int i = 0; i < 10; i++){
-        if (quartos[i]!='\O'){
-            printf("%d: %s", i, quartos[i]);
+        if (ocupado[i]){
+            printf("%d: %s, %s\n", i, quartos[i][0], quartos[i][1]);
         }
     }
     
