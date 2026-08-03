@@ -10,8 +10,9 @@ int main() {
     int decimoNumero;
     
     // Adicionando 9 numeros no vetor
+    printf("Digite 9 números:\n");
     for (int i = 0; i < 9; i++){
-        printf("Digite um número: ");
+        printf("Número %d: ", i + 1);
         scanf("%d", &numeros[i]);
     }
 
@@ -30,7 +31,24 @@ int main() {
     printf("Digite o último número: ");
     scanf("%d", &decimoNumero);
 
+    // Adicionando o 10º número na posição correta
 
+    // Compara um a um
+    int posicao = 0; // Inicia comparação no primeiro elemento do vetor
+    // Enquanto a posição for menor que 9 e o numero da posição for menor que o decimo numero
+    while (posicao < 9 && numeros[posicao] < decimoNumero){
+        posicao++; // incrementa 1 posição
+    }
+
+    // Desloca os elementos do vetor para a direita
+    for (int i = 9; i > posicao; i--){
+        numeros[i] = numeros[i - 1];
+    }
+
+    // Adiciona o décimo número na posição correta
+    numeros[posicao] = decimoNumero;
+
+    // Imprime o vetor ordenado
     for (int i = 0; i < 10; i++){
         printf("%d\n", numeros[i]);
     }
