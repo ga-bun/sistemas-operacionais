@@ -65,7 +65,7 @@ int main() {
         posicao++;
     }
 
-    if(posicao < tamanhoListaDeContatos){
+    if (posicao < tamanhoListaDeContatos){
         listaDeContatos[posicao].nome = listaDeContatos[tamanhoListaDeContatosReal-1].nome;
         listaDeContatos[tamanhoListaDeContatosReal-1].nome = '\O'; // Pergunta: Posso fazer isso?
         listaDeContatos[posicao].telefone = listaDeContatos[tamanhoListaDeContatosReal-1].telefone;
