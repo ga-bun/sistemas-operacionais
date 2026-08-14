@@ -22,7 +22,7 @@ int main() {
 
     // Pra pegar o atributo preciso fazer exatamente o que está na terceira linha
     printf("Digite o nome da rua: ");
-    fgets(p1.rua, sideof(p1.rua), stdin);
+    fgets(p1.rua, sizeof(p1.rua), stdin);
     p1.rua[ strspn(p1.rua, "\n")] = '\0' // Remove o \n da string que fica do fgets
 
     return 0;
