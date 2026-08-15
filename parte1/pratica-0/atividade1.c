@@ -9,8 +9,19 @@
 
 // Passando o ponteiro das duas strings -> só recebe o endereço de memória do primeiro char e não a string inteira
 int compararStrings(char *prtString1, char *prtString2) {
-    
-    return 0;
+    // Verifica cada caracter das strings se são iguais:
+    while(*prtString1 != '\0' && *prtString2 != '\0') {
+        
+        if(*prtString1 != *prtString2) {
+            return 1; // Strings são diferentes
+        }
+        
+        // Incrementa em 1 o conteúdo do ponteiro, ou seja, prox caractere da string
+        prtString1++;
+        prtString2++;
+    }
+
+    return 0; // Strings são iguais
 }
 
 int main () {
@@ -26,7 +37,11 @@ int main () {
     fgets(string2, sizeof(string2), stdin);
     string2[strcspn(string2, "\n")] = '\0'; // Remove o \n da string que fica do fgets
 
-    compararStrings(string1, string2);
+    if(compararStrings(string1, string2) == 1) {
+        printf("As strings são diferentes.\n");
+    } else {
+        printf("As strings são iguais.\n");
+    }
 
     return 0;
 }
