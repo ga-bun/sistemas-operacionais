@@ -37,7 +37,40 @@ typedef struct {
     Curso curso;
 } Aluno;
 
+Aluno cadastrarAluno(char *nome, char *email, int matricula, Curso curso) {
+    Aluno aluno;
+    
+    aluno.curso = curso;
+    aluno.matricula = matricula;
+    strcpy(aluno.nome, nome);
+    strcpy(aluno.email, email);
+}
+
+Curso cadastrarCurso(char *nome, Universidade universidade) {
+    Curso curso;
+    
+    strcpy(curso.nome, nome);
+    curso.universidade = universidade;
+}
+
+Universidade cadastrarUniversidade(char *nome, char *cidade) {
+    Universidade universidade;
+
+    stricpy(universidade.nome, nome);
+    stricpy(universidade.cidade, cidade);
+}
+
 int main () {
+    Universidade ufsc = cadastrarUniversidade("UFSC", "Florianópolis");
+    Universidade ifscSJ = cadastrarUniversidade("IFSC", "São José");
+    
+    Curso fisicaUfsc = cadastrarCurso("Física", ufsc);
+    Curso sistemasUfsc = cadastrarCurso("Sistemas da Informação", ufsc);
+
+    Curso adsIfscSJ = cadastrarCurso("ADS", ifscSJ);
+    Curso quimicaIfscSj = cadastrarCurso("Química", ifscSJ);
+
+    // Cadastro com array de alunos
 
     return 0;
 }
