@@ -28,8 +28,8 @@ Consulta criarConsulta(Medico m, Paciente p, char *data, char *descricao) {
     Consulta c;
     c.medico = m;
     c.paciente = p;
-    strcpy(c.descricao, descricao)
-    strcpy(c.data, data)
+    strcpy(c.descricao, descricao);
+    strcpy(c.data, data);
 
     return c;
 }
