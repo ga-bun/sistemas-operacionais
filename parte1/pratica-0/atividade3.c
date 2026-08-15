@@ -44,6 +44,8 @@ Aluno cadastrarAluno(char *nome, char *email, int matricula, Curso curso) {
     aluno.matricula = matricula;
     strcpy(aluno.nome, nome);
     strcpy(aluno.email, email);
+
+    return aluno;
 }
 
 Curso cadastrarCurso(char *nome, Universidade universidade) {
@@ -51,13 +53,17 @@ Curso cadastrarCurso(char *nome, Universidade universidade) {
     
     strcpy(curso.nome, nome);
     curso.universidade = universidade;
+    
+    return curso;
 }
 
 Universidade cadastrarUniversidade(char *nome, char *cidade) {
     Universidade universidade;
 
-    stricpy(universidade.nome, nome);
-    stricpy(universidade.cidade, cidade);
+    strcpy(universidade.nome, nome);
+    strcpy(universidade.cidade, cidade);
+
+    return universidade;
 }
 
 int main () {
@@ -71,6 +77,26 @@ int main () {
     Curso quimicaIfscSj = cadastrarCurso("Química", ifscSJ);
 
     // Cadastro com array de alunos
+    Aluno alunos[4];
+
+    alunos[0] = cadastrarAluno("Pedro", "pedro@grad.ufsc.br", 1234567890, fisicaUfsc);
+    alunos[1] = cadastrarAluno("Marta", "marta@grad.ufsc.br", 1234567891, sistemasUfsc);
+    alunos[2] = cadastrarAluno("Gabriel", "gabriel@aluno.ifsc.edu.br", 1234567892, adsIfscSJ);
+    alunos[3] = cadastrarAluno("Flora", "flora@aluno.ifsc.edu.br", 1234567893, quimicaIfscSj);
+
+    // Relembrando length do array: 
+    // sizeof(numeros) -> tamanho em bytes
+    // tamanho_em_bytes/sizeof(numeros[0]) -> quantidade de elementos: tamanho total em bytes dividido pelo tamanho em bytes do primeiro elemento
+    int tamanhoAlunos = sizeof(alunos)/sizeof(alunos[0]);
+
+    for(int i=0; i<tamanhoAlunos; i++){
+        printf("Nome: %s\n", alunos[i].nome);
+        printf("Email: %s\n", alunos[i].email);
+        printf("Matricula: %d\n", alunos[i].matricula);
+        printf("Curso: %s\n", alunos[i].curso.nome);
+        printf("Universidade: %s\n", alunos[i].curso.universidade.nome);
+        printf("Cidade universidade: %s\n", alunos[i].curso.universidade.cidade);
+    }
 
     return 0;
 }
