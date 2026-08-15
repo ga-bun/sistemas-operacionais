@@ -11,7 +11,7 @@
 int compararStrings(char *prtString1, char *prtString2) {
     // Verifica cada caracter das strings se são iguais:
     while(*prtString1 != '\0' && *prtString2 != '\0') {
-        
+
         if(*prtString1 != *prtString2) {
             return 1; // Strings são diferentes
         }
@@ -21,7 +21,13 @@ int compararStrings(char *prtString1, char *prtString2) {
         prtString2++;
     }
 
-    return 0; // Strings são iguais
+    // Ou *prtString1 ou *prtString2 é vazio, se os dois forem vazios => iguais
+    if(*prtString1 == '\0' && *prtString2 == '\0') {
+        return 0; // Strings são iguais
+    } else {
+        return 1; // Strings são diferentes
+    }
+    
 }
 
 int main () {
