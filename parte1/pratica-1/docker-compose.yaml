@@ -1,0 +1,8 @@
+services:
+  c-dev:
+    build: .
+    container_name: c-dev
+    volumes:
+      - ./src:/pratica01
+    stdin_open: true
+    tty: true
