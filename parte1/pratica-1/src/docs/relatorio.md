@@ -44,7 +44,7 @@ https://feepingcreature.github.io/handling.html
 
 # Experimento 4
 
-
+![Imagem experimento 4 strace](./experimento-4/experimento4.png)
 
 # Experimento 5
 
