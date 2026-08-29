@@ -28,12 +28,22 @@ Explique com suas palavras a diferença entre o que o comando ltrace intercepta 
 
 
 # Experimento 3
-
+![Imagem do erro Segmentation fault (core dumped) no terminal](./experimento-3/experimento3.png)
 
 Pesquise, qual componente de hardware detecta a tentativa de acesso indevido à memória e como o Kernel reage ao receber essa exceção
 
---
+- Unidade de gerenciamento de Memória (MMU). 
+Uma das maneiras é encerrar o processo, acaba em SIGSEGV (system crash).
+Outras, depende do sistema, mas alguns tentam lidar de forma a não deixar o sistema morrer de imediato. Como redirecionamento que registra erro, lança exceção, etc.
+
+Ref: 
+
+https://en.wikipedia.org/wiki/Segmentation_fault
+https://feepingcreature.github.io/handling.html
+
 # Experimento 5
+
+
 Observe o Terminal A: Note o salto instantâneo nas colunas in (interrupções).
 • Qual era o valor aproximado da coluna in (interrupções/seg) com o sistema em repouso?
 • Para quanto esse valor subiu durante a execução do loop de E/S?
