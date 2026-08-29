@@ -4,6 +4,9 @@ por uma aplicação. Em um terminal, execute strace date para descobrir quais os
 abertos pela execução do utilitário date (que indica a data e hora correntes). Por que o utilitário
 date precisa fazer chamadas de sistema?
 
+- Sendo o Date um programa utilitário, pertencente à camada do Usuário/aplicações, ele não tem permissão para gerenciar o relógio do hardware. Quem faz isso é o núcleo do SO. Para ter acesso à essa informação, o Date precisa fazer um "pedido" ao núcleo por meio de algumas funções. Exemplo: execve(), brk(), read(), mmap(), close() que pode ser observadas em 
+
+![detalhes do Strace parte 1 strace date](./strace-and-ltrace/strace-1.png)
 
 2. O utilitário ltrace do UNIX permite observar a sequência de chamadas de biblioteca efetuadas
 por uma aplicação. Em um terminal, execute ltrace date para descobrir as funções de bibli-
@@ -15,6 +18,12 @@ observadas no item anterior?
 # Experimento 2
 Explique com suas palavras a diferença entre o que o comando ltrace intercepta e o que o
 strace intercepta. Por que o printf() precisa disparar a syscall write()?
+
+- trace system calls and signals
+http://www.man7.org/linux/man-pages/man1
+
+- A library call tracer
+https://www.man7.org/linux/man-pages/man1/ltrace.1.html
 
 --
 # Experimento 3
