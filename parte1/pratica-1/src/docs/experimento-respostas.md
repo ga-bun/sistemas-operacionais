@@ -28,14 +28,14 @@ Explique com suas palavras a diferença entre o que o comando ltrace intercepta 
 
 
 # Experimento 3
-Pesquise, qual componente de hardware detecta a tentativa de acesso indevido à memória e
-como o Kernel reage ao receber essa exceção
+
+
+Pesquise, qual componente de hardware detecta a tentativa de acesso indevido à memória e como o Kernel reage ao receber essa exceção
 
 --
 # Experimento 5
 Observe o Terminal A: Note o salto instantâneo nas colunas in (interrupções).
-• Qual era o valor aproximado da coluna in (interrupções/seg) com o sistema em re-
-pouso?
+• Qual era o valor aproximado da coluna in (interrupções/seg) com o sistema em repouso?
 • Para quanto esse valor subiu durante a execução do loop de E/S?
 
 --
@@ -59,12 +59,31 @@ ou ver uma alternativa para rodar esses no docker
 
 3. Qual é a diferença entre modo núcleo e modo usuário? Explique como ter dois modos distintos ajuda no projeto de um sistema operacional.
 
-- 
+- O modo núcleo tem acesso a basicamente todos os recursos do computador: instruções do processador, registrdores, portas de I/O, áreas de memória.
+
+- O modo usuário possui acesso bem mais restrito. O acesso à instruções perigosas, como RESET, IN/OUT é proíbido.
+
+- Essa separação impede abuso por aplicações, é possível ter um isolamento de erros, falhas e comportamentos indevidos dos aplicativos, isso garante que o núcleo consiga lidar de forma mais fácil com exceções e garante maior estabilidade e segurança pra o Sistema.
 
 4. Quais das instruções a seguir devem ser deixadas somente em modo núcleo?
-(a) Desabilitar todas as interrupções.
-(b) Ler o relógio da hora do dia.
-(c) Configurar o relógio da hora do dia.
-(d) Mudar o mapa de memória
 
-5. Quando um programa de usuário faz uma chamada de sistema para ler ou escrever um arquivo de disco, ele fornece uma indicação de qual arquivo ele quer, um pon- teiro para o buffer de dados e o contador. O controle é então transferido para o sistema operacional, que chama o driver apropriado. Suponha que o driver começa o dis- co e termina quando ocorre uma interrupção. No caso da leitura do disco, obviamente quem chamou terá de ser bloqueado (pois não há dados para ele). E quanto a escrever para o disco? Quem chamou precisa ser bloque- ado esperando o término da transferência de disco?
+    (a) Desabilitar todas as interrupções. 
+
+    - **Núcleo**
+
+    (b) Ler o relógio da hora do dia. 
+    
+    - **Usuário**
+
+    (c) Configurar o relógio da hora do dia.
+
+    - **Núcleo**
+
+    (d) Mudar o mapa de memória
+
+    - **Núcleo**
+
+
+5. Quando um programa de usuário faz uma chamada de sistema para ler ou escrever um arquivo de disco, ele fornece uma indicação de qual arquivo ele quer, um ponteiro para o buffer de dados e o contador. O controle é então transferido para o sistema operacional, que chama o driver apropriado. Suponha que o driver começa o disco e termina quando ocorre uma interrupção. No caso da leitura do disco, obviamente quem chamou terá de ser bloqueado (pois não há dados para ele). E quanto a escrever para o disco? Quem chamou precisa ser bloqueado esperando o término da transferência de disco?
+
+- Sim, precisa ser bloqueado. Se quem chamou continua o processo, pode modificar a escrita do disco. O ideal é que ou um ou outro parem seus processos e espere um ou outro terminar.
