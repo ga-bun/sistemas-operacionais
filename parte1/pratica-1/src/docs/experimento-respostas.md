@@ -12,7 +12,7 @@
 
     ![Imagem com o retorno da chamada ltrace](./experimento-1/ltrace.png)
 
---
+
 # Experimento 2
 Explique com suas palavras a diferença entre o que o comando ltrace intercepta e o que o strace intercepta. Por que o printf() precisa disparar a syscall write()?
 
@@ -20,20 +20,13 @@ Explique com suas palavras a diferença entre o que o comando ltrace intercepta 
 
     ![Imagem com o retorno da chamada ltrace com o programa lab1](./experimento-2/experimento2-ltrace.png)
 
-O strace intercepta todas as chamadas do sistemas feitas para o núcleo. 
+- O strace intercepta todas as chamadas do sistemas feitas para o núcleo. 
     
     ![Imagem com o retorno da chamada strace com o programa lab1](./experimento-2/experimento2-strace.png)
 
-O printf() chama o syscall write() porque o programa não tem permissão para escrever na tela, visto que só o núcleo que comanda a entrada e saída (I/O); dito isso, o printf() (biblioteca), faz um pedido ao núcleo, utilizando write(), só assim é realizada a saída (quem faz é o núcleo).
+- O printf() chama o syscall write() porque o programa não tem permissão para escrever na tela, visto que só o núcleo que comanda a entrada e saída (I/O); dito isso, o printf() (biblioteca), faz um pedido ao núcleo, utilizando write(), só assim é realizada a saída (quem faz é o núcleo).
 
 
-- trace system calls and signals
-http://www.man7.org/linux/man-pages/man1
-
-- A library call tracer
-https://www.man7.org/linux/man-pages/man1/ltrace.1.html
-
---
 # Experimento 3
 Pesquise, qual componente de hardware detecta a tentativa de acesso indevido à memória e
 como o Kernel reage ao receber essa exceção
@@ -57,20 +50,21 @@ ou ver uma alternativa para rodar esses no docker
 --
 # Perguntas finais
 1. Quais são as duas principais funções de um sistema operacional?
-2. Instruções relacionadas ao acesso a dispositivos de E/S são tipicamente instruções privilegia-
-das, isto é, podem ser executadas em modo núcleo, mas não em modo usuário. Dê uma razão
-de por que essas instruções são privilegiadas.
-3. Qual é a diferença entre modo núcleo e modo usuário? Explique como ter dois modos distintos
-ajuda no projeto de um sistema operacional.
+
+- A primeira e mais importante é Controlar o funcionamento do computador. A outra é servir de interface entre o usuário e o computador, deixando a experiência do usuário mais simples e rápida.
+
+2. Instruções relacionadas ao acesso a dispositivos de E/S são tipicamente instruções privilegiadas, isto é, podem ser executadas em modo núcleo, mas não em modo usuário. Dê uma razão de por que essas instruções são privilegiadas.
+
+- Segurança. O fato de que somente o núcleo consegue dar essas instruções aos dispositivos E/S é evitar que dispositivos ou aplicativos acessem um ao outro (memória) e interfiram seus processos, gerando erros, alterando comportamento, acessando informações que não deveriam ou até acessando indevidamente de forma maliciosa.
+
+3. Qual é a diferença entre modo núcleo e modo usuário? Explique como ter dois modos distintos ajuda no projeto de um sistema operacional.
+
+- 
+
 4. Quais das instruções a seguir devem ser deixadas somente em modo núcleo?
 (a) Desabilitar todas as interrupções.
 (b) Ler o relógio da hora do dia.
 (c) Configurar o relógio da hora do dia.
 (d) Mudar o mapa de memória
-5. Quando um programa de usuário faz uma chamada de sistema para ler ou escrever um arquivo
-de disco, ele fornece uma indicação de qual arquivo ele quer, um pon- teiro para o buffer de
-dados e o contador. O controle é então transferido para o sistema operacional, que chama
-o driver apropriado. Suponha que o driver começa o dis- co e termina quando ocorre uma
-interrupção. No caso da leitura do disco, obviamente quem chamou terá de ser bloqueado
-(pois não há dados para ele). E quanto a escrever para o disco? Quem chamou precisa ser
-bloque- ado esperando o término da transferência de disco?
+
+5. Quando um programa de usuário faz uma chamada de sistema para ler ou escrever um arquivo de disco, ele fornece uma indicação de qual arquivo ele quer, um pon- teiro para o buffer de dados e o contador. O controle é então transferido para o sistema operacional, que chama o driver apropriado. Suponha que o driver começa o dis- co e termina quando ocorre uma interrupção. No caso da leitura do disco, obviamente quem chamou terá de ser bloqueado (pois não há dados para ele). E quanto a escrever para o disco? Quem chamou precisa ser bloque- ado esperando o término da transferência de disco?
