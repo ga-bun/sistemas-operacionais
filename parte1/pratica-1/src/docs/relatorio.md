@@ -61,13 +61,8 @@ https://feepingcreature.github.io/handling.html
 
 # Experimento 6
 
-ToDo:
-cat /proc/interrupts | grep -E "CPU0|SATA|nvme|timer|LOC"
-cat /proc/ioports | head -n 25
-cat /proc/dma
-ou ver uma alternativa para rodar esses no docker
+![Imagem do retorno dos dois retornos do experimento 6](./experimento-6/experiemento6.png)
 
---
 # Perguntas finais
 1. Quais são as duas principais funções de um sistema operacional?
 
