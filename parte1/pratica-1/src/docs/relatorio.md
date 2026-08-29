@@ -49,12 +49,16 @@ https://feepingcreature.github.io/handling.html
 
 # Experimento 5
 
+(e) Observe o Terminal A: Note o salto instantâneo nas colunas in (interrupções). 
 
-Observe o Terminal A: Note o salto instantâneo nas colunas in (interrupções).
-• Qual era o valor aproximado da coluna in (interrupções/seg) com o sistema em repouso?
-• Para quanto esse valor subiu durante a execução do loop de E/S?
+![Imagem do vmstat 1](./experimento-5/experimento5.png)
 
---
+1. Qual era o valor aproximado da coluna in (interrupções/seg) com o sistema em repouso?
+- Aproximadamente 2000
+
+2. Para quanto esse valor subiu durante a execução do loop de E/S?
+- 5122
+
 # Experimento 6
 
 ToDo:
