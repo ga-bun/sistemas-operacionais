@@ -2,17 +2,30 @@
 1. O utilitário strace do UNIX permite observar a sequência de chamadas de sistema efetuadas por uma aplicação. Em um terminal, execute strace date para descobrir quais os arquivos abertos pela execução do utilitário date (que indica a data e hora correntes). Por que o utilitário date precisa fazer chamadas de sistema?
 
 - Sendo o Date um programa utilitário, pertencente à camada do Usuário/aplicações, ele não tem permissão para gerenciar o relógio do hardware. Quem faz isso é o núcleo do SO. Para ter acesso à essa informação, o Date precisa fazer um "pedido" ao núcleo por meio de algumas funções. Exemplo: execve(), brk(), read(), mmap(), close() que pode ser observadas em 
-![Imagem com detalhes do Strace parte 1 strace date](./strace-and-ltrace/strace-1.png)
+
+    ![Imagem com detalhes do Strace parte 1 strace date](./experimento-1/strace-1.png)
 
 2. O utilitário ltrace do UNIX permite observar a sequência de chamadas de biblioteca efetuadas por uma aplicação. Em um terminal, execute ltrace date para descobrir as funções de biblioteca chamadas pela execução do utilitário date (que indica a data e hora correntes). Pode ser observada alguma relação entre as chamadas de biblioteca e as chamadas de sistema observadas no item anterior?
 
 - Executando o comando não é possível ver muito bem a relação, visto que o comando só trouxe a data e a hora e um indicador de que o processo foi terminado, e não as chamadas das bibliotecas. 
 
-- ![Imagem com o retorno da chamada ltrace](./strace-and-ltrace/ltrace.png)
+
+    ![Imagem com o retorno da chamada ltrace](./experimento-1/ltrace.png)
 
 --
 # Experimento 2
 Explique com suas palavras a diferença entre o que o comando ltrace intercepta e o que o strace intercepta. Por que o printf() precisa disparar a syscall write()?
+
+- O ltrace faz um rastreamento das chamadas de biblioteca, pela captura de tela é possível ver também que o ltrace intercepta retorno do programa. 
+
+    ![Imagem com o retorno da chamada ltrace com o programa lab1](./experimento-2/experimento2-ltrace.png)
+
+O strace intercepta todas as chamadas do sistemas feitas para o núcleo. 
+    
+    ![Imagem com o retorno da chamada strace com o programa lab1](./experimento-2/experimento2-strace.png)
+
+O printf() chama o syscall write() porque o programa não tem permissão para escrever na tela, visto que só o núcleo que comanda a entrada e saída (I/O); dito isso, o printf() (biblioteca), faz um pedido ao núcleo, utilizando write(), só assim é realizada a saída (quem faz é o núcleo).
+
 
 - trace system calls and signals
 http://www.man7.org/linux/man-pages/man1
