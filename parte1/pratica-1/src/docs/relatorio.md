@@ -33,13 +33,18 @@ Explique com suas palavras a diferença entre o que o comando ltrace intercepta 
 Pesquise, qual componente de hardware detecta a tentativa de acesso indevido à memória e como o Kernel reage ao receber essa exceção
 
 - Unidade de gerenciamento de Memória (MMU). 
-Uma das maneiras é encerrar o processo, acaba em SIGSEGV (system crash).
+
+- Uma das maneiras é encerrar o processo, acaba em SIGSEGV (system crash).
 Outras, depende do sistema, mas alguns tentam lidar de forma a não deixar o sistema morrer de imediato. Como redirecionamento que registra erro, lança exceção, etc.
 
 Ref: 
 
 https://en.wikipedia.org/wiki/Segmentation_fault
 https://feepingcreature.github.io/handling.html
+
+# Experimento 4
+
+
 
 # Experimento 5
 
