@@ -40,6 +40,7 @@ Outras, depende do sistema, mas alguns tentam lidar de forma a não deixar o sis
 Ref: 
 
 https://en.wikipedia.org/wiki/Segmentation_fault
+https://ptcomputador.com/Networking/network-security/299110.html
 https://feepingcreature.github.io/handling.html
 
 # Experimento 4
