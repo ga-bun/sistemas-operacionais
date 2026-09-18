@@ -1,0 +1,117 @@
+    1  cd /home
+    2  pwd
+    3  cd /etc
+    4  cd ~
+    5  ls -l
+    6  mkdir projeto
+    7  mkdir -p projeto/src/utils
+    8  cd projeto/src/
+    9  pwd
+   10  touch arquivo.txt
+   11  grep "aluno" /etc/passwd
+   12  ls > lista.txt
+   13  echo "nova linha" >> lista.txt
+   14  cp arquivo.txt copia.txt
+   15  mv copia.txt ../
+   16  rm arquivo.txt
+   17  rm -r projeto
+   18  cd ../..
+   19  rm -r projeto/
+   20  ps
+   21  ps aux
+   22  ls
+   23  cd /home
+   24  ls
+   25  cd aluno/
+   26  ls
+   27  mkdir -p Prova/Brasil/regiaoNorte/Amazonas
+   28  mkdir -p Prova/Brasil/regiaoNorte/Acre
+   29  mkdir -p Prova/Brasil/regiaoSul/Parana
+   30  mkdir -p Prova/Brasil/regiaoSul/SantaCatarina
+   31  tree
+   32  apt install tree
+   33  tree
+   34  cd prova
+   35  ls
+   36  cd Prova/
+   37  tree
+   38  cd ..
+   39  cd Prova/Brasil/regiao
+   40  mv Acre Tocantins
+   41  cd Prova/Brasil/regiaoNorte/
+   42  ls
+   43  mv Acre Tocantins
+   44  ls
+   45  groupadd gerentes
+   46  groupadd assistentes
+   47  cd /etc
+   48  ls
+   49  grep "group" .
+   50  grep "group"
+   51  grep "gerente" /group
+   52  ls -l
+   53  cd /home/aluno
+   54  grep gerente /etc/group
+   55  man useradd
+   56  man useradd | grep name
+   57  man useradd
+   58  useradd -d /home/gerentes/gerente1 -G gerentes -s /bin/bash gerente1
+   59  useradd -d /home/gerentes/assistente1 -G assistentes -s /bin/bash assistente1
+   60  ls
+   61  cd Prova/
+   62  tree
+   63  cd ..
+   64  ls -a
+   65  cp /etc/passwd /home/aluno/Prova/Brasil/
+   66  ls -l Prova/Brasil
+   67  touch /home/aluno/Prova/Brasil/regiaoSul/Parana/permissoes.txt
+   68  ls -l /home/aluno/Prova/Brasil/regiaoSul/Parana/
+   69  mv /home/aluno/Prova/Brasil/regiaoSul/Parana/permissoes.txt /home/aluno/Prova/Brasil/
+   70  ls -l /home/aluno/Prova/Brasil/
+   71  man chown
+   72  chown assistente1:assistente /home/aluno/Prova/Brasil/permissoes.txt 
+   73  chown assistente1:assistentes /home/aluno/Prova/Brasil/permissoes.txt 
+   74  ls -l /home/aluno/Prova/Brasil/permissoes.txt 
+   75  man chown
+   76  man chgrp
+   77  chgrp ==help
+   78  chgrp --help
+   79  chown --help
+   80  chgrp gerentes /home/aluno/Prova/Brasil/permissoes.txt 
+   81  ls -l /home/aluno/Prova/Brasil/permissoes.txt 
+   82  cd Prova/Brasil/
+   83  ls -l
+   84  754 permissoes.txt 
+   85  chmod 754 permissoes.txt 
+   86  ls -l
+   87  chmod 751 permissoes.txt 
+   88  ls -l
+   89  chmod 575 permissoes.txt 
+   90  ls -l
+   91  chmod u-x permissoes.txt 
+   92  ls -l
+   93  chmod o-r permissoes.txt 
+   94  ls -l
+   95  chmod a+rwx permissoes.txt 
+   96  ls -l
+   97  cd /home/aluno/
+   98  uname -a
+   99  uptime
+  100  dmesg | tail
+  101  vmstat
+  102  iostat
+  103  sar -u 1 3
+  104  who
+  105  whoami
+  106  who
+  107  users
+  108  w
+  109  id
+  110  lscpu
+  111  cat /proc/cpuinfo
+  112  nproc
+  113  free -h
+  114  cat /proc/meminfo
+  115  lsblk
+  116  df -h
+  117  history > comandos.txt
