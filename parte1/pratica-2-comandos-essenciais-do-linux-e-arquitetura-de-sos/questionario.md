@@ -42,12 +42,24 @@
 
 - (a) Sistemas Críticos (ex: Aeronáutica)
 
+**O exemplo da aeronáutica, é preciso de grande desempenho (resposta rápida) e modularizaçao, então nesse caso, a melhor arquitetura seria micronúcleo**
+
 - (b) Servidores
+
+**A melhor opção seria o monolítico (no caso do Ubuntu server, monolítico modular) ou híbrido (Windows server), porque o foco é desempenho no gerenciamento de recursos/usuários e disponibilidade de informação, mas também segurança da informação**
 
 - (c) Sistemas Distribuídos
 
+**Micronúcleo. Aqui o foco é a troca de mensagens entre computadores, compartilhamente de recursos entre essas máquinas, escalabilidade, heterogeneidade. Por isso o micronúcleo é o mais adequado, ele garante justamente a independencia dos serviços**
+
 - (d) Sistemas Embarcados
+
+**Micronúcleo. Pegando como exemplo o QNX, utilizado também em sistemas críticos, o foco é resposta rápida (tempo real), multitarefa/multiusuário, estabilidade e segurança, mas também precisa ser um sistema que utiliza pouco espaço**
 
 - (e) Sistemas de Tempo Real
 
+**Micronúcleo: Tem muito em comum com os sistemas embarcados e sistemas críticos, pois os dois usam muito de sistemas de Tempo Real (exemplo QNX que usei antes), aqui o foco é essa resposta em tempo real e a maioria dos serviços de tempo real/threads são implementados diretamente no núcleo, às vezes é dispensável serviços fora dele, eliminando a grande desvantagem desse sistema.**
+
 - (f) Sistemas Móveis
+
+**Híbrido: Os sistemas móveis focam muito em equilíbrio/flexibilidade (bateria, segurança, conectividade, etc). Pegando como exemplo o sistema XNU, desenvolvido pela apple, ele contém características de arquitetura monolítica e micronúcleo**
