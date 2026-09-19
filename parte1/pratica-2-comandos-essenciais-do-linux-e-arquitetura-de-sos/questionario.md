@@ -2,8 +2,6 @@
 
 1. Monte uma tabela com os benefícios e deficiências mais relevantes das principais arquiteturas de sistemas operacionais
 
-De acordo com o livro texto da disciplina:
-
 | Arquitetura | Benefícios | Deficiências |
 |---|---|---|
 | **Sistemas monolíticos** | Desempenho devido à comunicação direta entre componentes do núcleo | Problemas de robustez do sistema, um erro pode propagar para todo o núcleo; Problemas com desenvolvimento: os componentes podem ser interdependentes, dificulta manutenção/evolução |
@@ -15,23 +13,32 @@ De acordo com o livro texto da disciplina:
 | **Sistemas exonúcleo** | Acesso controlado aos recursos do hardware, cada aplicação implementa o que for mais adequado, isso pode favorecer o desempenho da aplicação específica | Não há abstração, os componentes fora do núcleo devem aplicar tudo (LibOs), sobrecarga de desempenho para o sistema (chamadas de sistema para o núcleo), complexidade |
 | **Sistemas uninúcleo (unikernel)** | O núcleo, bibliotecas e aplicação compilados e ligados enre si, aumenta muito desempenho. Só entra no código final, os componentes necessários, sistema compacto  | Qualquer mudança é necessário recompilação. A separação entre os componentes não existe, então não pode ser usada em sistemas que precisam de aplicações independentes |
 
+---
+2. Sobre as afirmações a seguir, relativas às diversas arquiteturas de sistemas operacionais, indique quais são incorretas, justificando sua resposta:
 
-2. Sobre as afirmações a seguir, relativas às diversas arquiteturas de sistemas operacionais,
-indique quais são incorretas, justificando sua resposta:
-- (a) Uma máquina virtual de sistema é construída para suportar uma aplicação escrita em
-uma linguagem de programação específica, como Java.
+- (a) Uma máquina virtual de sistema é construída para suportar uma aplicação escrita em uma linguagem de programação específica, como Java. 
+
+    **Incorreta, isso seria uma maquina virtual de aplicação (Hipervisor de aplicação), o de sistema (Hipervisor de sistema) suporta a execução de um sistema operacional convidado + aplicações**
 
 - (b) Um hipervisor convidado executa sobre um sistema operacional hospedeiro.
+    
+    **Correto**
 
 - (c) Em um sistema operacional micronúcleo, os diversos componentes do sistema são construídos como módulos interconectados executando dentro do núcleo.
+    
+    **Incorreto: isso seria monolítico. No micronúcleo, só os serviços essenciais ficam no núcleo, removendo toda os serviços de alto nível, deixando esses no espaço de usuário**
 
-- (d) Núcleos monolíticos são muito utilizados devido à sua robustez e facilidade de manutenção.
+- (d) Núcleos monolíticos são muito utilizados devido à sua robustez e facilidade de manutenção. 
+    
+    **Incorreto: utilizados principalmente pelo desempenho devido à comunicação direta entre os componentes**
 
-- (e) Em um sistema operacional micronúcleo, as chamadas de sistema são implementadas
-através de trocas de mensagens.
+- (e) Em um sistema operacional micronúcleo, as chamadas de sistema são implementadas através de trocas de mensagens. 
 
-3. Pesquisa que tipo de arquitetura é mais apropriada para os seguintes sistemas (justifique o
-porque):
+    **Correto**
+
+---
+
+3. Pesquisa que tipo de arquitetura é mais apropriada para os seguintes sistemas (justifique o porque):
 
 - (a) Sistemas Críticos (ex: Aeronáutica)
 
