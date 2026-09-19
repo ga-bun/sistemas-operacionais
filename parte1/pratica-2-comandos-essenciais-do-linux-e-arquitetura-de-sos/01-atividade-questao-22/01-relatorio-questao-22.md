@@ -4,7 +4,7 @@
 
 (a) O comando uname -a mostra informações sobre o kernel e o sistema operacional.
         
-![uname -a](./01-atividade-questao-22/a-uname-a.png)
+![uname -a](./a-uname-a.png)
 
 Qual é a versão do kernel em execução?
 
@@ -12,14 +12,14 @@ Qual é a versão do kernel em execução?
 
 (b) O comando uptime exibe há quanto tempo o sistema está ativo e a carga média.
 
-![uptime](./01-atividade-questao-22/b-uptime.png)
+![uptime](./b-uptime.png)
 
 Há quanto tempo o sistema está ligado?
 - **1 minuto e 1 segundo**
 
 (c) O comando dmesg | tail mostra as últimas mensagens do kernel, úteis para depuração.
 
-![dmesg | tail](./01-atividade-questao-22/c-dmesg-tail.png)
+![dmesg | tail](./c-dmesg-tail.png)
 
 Que tipo de mensagens aparecem no log?
 
@@ -27,7 +27,7 @@ Que tipo de mensagens aparecem no log?
 
 (d) O comando vmstat exibe estatísticas de memória, processos e CPU.
 
-![vmstat](./01-atividade-questao-22/d-vmstat.png)
+![vmstat](./d-vmstat.png)
 
 Qual é a quantidade de memória livre?
 
@@ -35,7 +35,7 @@ Qual é a quantidade de memória livre?
 
 (e) O comando iostat mostra estatísticas de entrada/saída de disco.
 
-![iostat](./01-atividade-questao-22/e-iostat.png)
+![iostat](./e-iostat.png)
 
 Qual dispositivo apresenta maior atividade de I/O?
 
@@ -43,7 +43,7 @@ Qual dispositivo apresenta maior atividade de I/O?
 
 (f) O comando sar -u 1 3 coleta métricas de desempenho da CPU a cada segundo, por 3
 
-![sar -u 1 3](./01-atividade-questao-22/f-sar-u-1-3.png)
+![sar -u 1 3](./f-sar-u-1-3.png)
 
 Qual foi o percentual médio de uso da CPU?
 
@@ -51,21 +51,21 @@ Qual foi o percentual médio de uso da CPU?
 
 (g) O comando who mostra usuários logados.
 
-![who](./01-atividade-questao-22/g-who.png)
+![who](./g-who.png)
 
 Quantos usuários estão logados?
 - **A saída do comando who não ofereceu nenhum retorno. Mas temos o usuário aluno e também o root (veja saida do comando w)**
 
 (h) O comando w mostra usuários e processos em execução.
 
-![w](./01-atividade-questao-22/h-w.png)
+![w](./h-w.png)
 
 Qual usuário consome mais recursos?
 - **O usuário root, o JCPU é maior. JCPU é o tempo consumido por todos os processos não somente o que está rodando agora, não inclui processos terminados em bg, mas inclui processos em bg rodando agora**
 
 (i) O comando id exibe UID, GID e grupos do usuário atual.
 
-![id](./01-atividade-questao-22/i-id.png)
+![id](./i-id.png)
 
 Qual é o UID do seu usuário?
 
@@ -73,7 +73,7 @@ Qual é o UID do seu usuário?
 
 (j) O comando lscpu mostra informações da CPU (núcleos, threads, arquitetura).
 
-![lscpu](./01-atividade-questao-22/j-lscpu.png)
+![lscpu](./j-lscpu.png)
 
 Quantos núcleos físicos e lógicos existem?
 
@@ -81,8 +81,8 @@ Quantos núcleos físicos e lógicos existem?
 
 (k) O comando cat /proc/cpuinfo mostra detalhes de cada núcleo.
 
-![cat /proc/cpuinfo](./01-atividade-questao-22/k-cat-proc-cpuinfo-1.png)
-![cat /proc/cpuinfo](./01-atividade-questao-22/k-cat-proc-cpuinfo-2.png)
+![cat /proc/cpuinfo](./k-cat-proc-cpuinfo-1.png)
+![cat /proc/cpuinfo](./k-cat-proc-cpuinfo-2.png)
 
 Qual é o modelo da CPU?
 
@@ -90,7 +90,7 @@ Qual é o modelo da CPU?
 
 (l) O comando nproc retorna a quantidade de núcleos disponíveis.
 
-![nproc](./01-atividade-questao-22/l-nproc.png)
+![nproc](./l-nproc.png)
 
 Quantos núcleos o sistema reconhece?
 
@@ -98,7 +98,7 @@ Quantos núcleos o sistema reconhece?
 
 (m) O comando free -h mostra memória total, usada e livre.
 
-![free -h](./01-atividade-questao-22/m-free-h.png)
+![free -h](./m-free-h.png)
 
 Qual é a quantidade de memória livre?
 
@@ -106,7 +106,7 @@ Qual é a quantidade de memória livre?
 
 (n) O comando cat /proc/meminfo mostra informações detalhadas da RAM.
 
-![cat /proc/meminfo](./01-atividade-questao-22/n-cat-proc-meminfo.png)
+![cat /proc/meminfo](./n-cat-proc-meminfo.png)
 
 Qual é o valor de MemAvailable?
 
@@ -114,7 +114,7 @@ Qual é o valor de MemAvailable?
 
 (o) O comando lsblk lista discos e partições.
 
-![lsblk](./01-atividade-questao-22/o-lsblk.png)
+![lsblk](./o-lsblk.png)
 
 Quais partições estão montadas?
 
@@ -123,7 +123,7 @@ Quais partições estão montadas?
 
 (p) O comando df -h mostra uso de espaço em disco por partição.
 
-![df -h](./01-atividade-questao-22/p-df-h.png)
+![df -h](./p-df-h.png)
 
 Qual partição está mais cheia?
 - **/dev/sda2, com 33% de uso**

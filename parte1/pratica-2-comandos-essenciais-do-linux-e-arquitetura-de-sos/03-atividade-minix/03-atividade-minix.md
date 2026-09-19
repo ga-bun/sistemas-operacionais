@@ -12,14 +12,14 @@ Faça uma lista explicando o que cada um dos serviços faz
 
 - **ps**: imprime na tela o status os processos ativos. Se usar o ps -e (ou -ax) é possível ver todos os processos dos terminais e fora deles
 
-    ![ps](./03-atividade-minix/ps.png)
+    ![ps](./ps.png)
 
-    ![ps-e](./03-atividade-minix/ps-e.png)
+    ![ps-e](./ps-e.png)
 
 
 - **top**: imprime na tela de forma dinâmica (em tempo real). Indica um resumo de informações do sistema, lista de processos/threads sendo gerenciadas pelo núcleo
 
-    ![top](./03-atividade-minix/top.png)
+    ![top](./top.png)
 
 É possível ver que há 37 processos, somente em execução (running) e 36 dormindo (sleeping). O comando também mostra um relato da memória e detalhes do processador que está em basicamente ocioso (idle), 98%.
 
