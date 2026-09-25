@@ -42,8 +42,8 @@ TCB criarTarefa(int id, char *nome, int instrucoes, int sp) {
 
 int main() {
     // Criando as tarefas
-    TCB T1 = criarTarefa(1, "Tarefa 1", 6,100);
-    TCB T2 = criarTarefa(2, "Tarefa 2", 4,200);
+    TCB T1 = criarTarefa(1, "Tarefa 1", 6, 100);
+    TCB T2 = criarTarefa(2, "Tarefa 2", 4, 200);
     TCB T3 = criarTarefa(3, "Tarefa 3", 8, 300);
     
     TCB fila[3] = {T1, T2, T3}; // Onde as tarefas serão armazenadas
@@ -54,6 +54,45 @@ int main() {
                 fila[i].id, fila[i].nome, fila[i].estado, fila[i].pc, fila[i].instrucoes, fila[i].memoria, fila[i].sp);
     }
     
+    int tarefasFinalizadas = 0;
+    int indice = 0;
+
+    // TODO: melhorar, tá se tornando meio macarronico
+    while(tarefasFinalizadas < 3) {
+        // Verifica se a tarefa atual nao foi finalizada ainda
+        if(fila[indice].estado != FINALIZADA) {
+            fila[indice].estado = EXECUTANDO; // Muda o estado da tarefa para executando
+            
+            // Executando de fato a tarefa
+            int execucoes = 0;
+            while(execucoes < fila[indice].quantum && fila[indice].instrucoes > 0){
+                // Incrementa os registradores? como fazer isso?
+                fila[indice].memoria++;
+                fila[indice].sp++;
+                fila[indice].pc++; 
+                
+                fila[indice].instrucoes--;
+                
+                execucoes++;
+            }
+        }
+        
+        if (fila[indice].instrucoes == 0 && fila[indice].estado != FINALIZADA){
+            fila[indice].estado = FINALIZADA; // Quando acaba as instruções, a tarefa tá finalizada
+            tarefasFinalizadas++;
+        } else if (fila[indice].estado != FINALIZADA) {
+            fila[indice].estado = PRONTA; // Caso não esteja finalizada, volta a estar pronta
+        }
+
+        indice = (indice + 1) % 3; // Indice circular
+    }
+
+    printf("\nFila:\n");
+    for(int i = 0; i < 3; i++) {
+        printf("ID: %d, nome: %s, Estado: %d, PC:%d, Instrucoes restantes: %d, Memoria: %d, SP: %d\n",
+                fila[i].id, fila[i].nome, fila[i].estado, fila[i].pc, fila[i].instrucoes, fila[i].memoria, fila[i].sp);
+    }
+
 // Considere um quantum de 2 instruções.
 // Quando o quantum terminar:
     // 1 A tarefa atual deixa a CPU;
