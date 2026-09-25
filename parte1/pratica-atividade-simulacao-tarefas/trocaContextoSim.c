@@ -1,6 +1,7 @@
 // Objetivo: 
 // Implementar, em linguagem C, uma simulação simplificada 
 // do gerenciamento de tarefas de um Sistema Operacional
+#include <stdio.h>
 
 // Definindo a struct TCB
 typedef struct {
@@ -31,6 +32,7 @@ int main() {
         .instrucoes = 6,
         .sp = 100
     };
+
     TCB T2 = {
         .id = 2,
         .nome = "Tarefa 2",
@@ -40,6 +42,7 @@ int main() {
         .instrucoes = 4,
         .sp = 200
     };
+
     TCB T3 = {
         .id = 3,
         .nome = "Tarefa 3",
@@ -50,5 +53,18 @@ int main() {
         .sp = 300
     };
     
+    printf("ID: %d\n", T1.id);
+    printf("Nome: %s\n", T1.nome);
+    printf("Estado: %d\n", T1.estado);
+    printf("PC: %d\n", T1.pc);
+    printf("Quantum: %d\n", T1.quantum);
+    printf("Instrucoes restantes: %d\n", T1.instrucoes);
+    printf("Memoria: %d\n", T1.memoria);
+    printf("SP: %d\n", T1.sp);
+    for (int i = 0; i < 4; i++) {
+        printf("Registrador[%d]: %d\n", i, T1.registradores[i]);
+    }
+    
     TCB fila[3] = {T1, T2, T2}; // Onde as tarefas serão armazenadas
 }
+
