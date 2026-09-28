@@ -42,10 +42,21 @@ TCB criarTarefa(int id, char *nome, int instrucoes, int sp) {
 }
 
 void imprimirEstadoFila(TCB fila[], int tamanhoFila) {
-    printf("\nEstado da Fila:\n");
+    printf("\nFila:\n");
     for(int i = 0; i < tamanhoFila; i++) {
-        printf("ID: %d, nome: %s, Estado: %d, PC:%d, Instrucoes restantes: %d, Memoria: %d, SP: %d\n",
-                fila[i].id, fila[i].nome, fila[i].estado, fila[i].pc, fila[i].instrucoes, fila[i].memoria, fila[i].sp);
+        printf("ID: %d, nome: %s, Estado: %d, PC:%d, Instrucoes restantes: %d, SP: %d\n",
+                fila[i].id, fila[i].nome, fila[i].estado, fila[i].pc, fila[i].instrucoes, fila[i].sp);
+    }
+}
+
+void executarTarefa(TCB *tarefa) {
+    int execucoes = 0;
+
+    while(execucoes < tarefa->quantum && tarefa->instrucoes > 0){
+        tarefa->pc++; 
+        tarefa->instrucoes--;
+        
+        execucoes++;
     }
 }
 
@@ -57,30 +68,21 @@ int main() {
     
     TCB fila[TAMANHO_FILA] = {T1, T2, T3}; // Onde as tarefas serão armazenadas
 
+    printf("\n-------- ESTADO INICIAL DA FILA --------");
     imprimirEstadoFila(fila, TAMANHO_FILA);
     
     int tarefasFinalizadas = 0;
     int indice = 0;
 
-    // TODO: melhorar, tá se tornando meio macarronico
     while(tarefasFinalizadas < TAMANHO_FILA) {
         // Verifica se a tarefa atual nao foi finalizada ainda
         if(fila[indice].estado != FINALIZADA) {
             fila[indice].estado = EXECUTANDO; // Muda o estado da tarefa para executando
-            
-            // Executando de fato a tarefa
-            int execucoes = 0;
-            while(execucoes < fila[indice].quantum && fila[indice].instrucoes > 0){
-                // Incrementa os registradores? como fazer isso?
-                fila[indice].memoria++;
-                fila[indice].sp++;
-                fila[indice].pc++; 
-                
-                fila[indice].instrucoes--;
-                
-                execucoes++;
-            }
         }
+
+        executarTarefa(&fila[indice]); // Passando o endereço da tarefa
+        
+        imprimirEstadoFila(fila, TAMANHO_FILA);
         
         if (fila[indice].instrucoes == 0 && fila[indice].estado != FINALIZADA){
             fila[indice].estado = FINALIZADA; // Quando acaba as instruções, a tarefa tá finalizada
@@ -92,6 +94,7 @@ int main() {
         indice = (indice + 1) % TAMANHO_FILA; // Indice circular
     }
 
+    printf("\n-------- ESTADO FINAL DA FILA --------");
     imprimirEstadoFila(fila, TAMANHO_FILA);
     
 }
