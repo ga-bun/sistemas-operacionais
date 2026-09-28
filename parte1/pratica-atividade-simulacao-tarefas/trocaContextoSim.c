@@ -2,7 +2,6 @@
 // Implementar, em linguagem C, uma simulação simplificada 
 // do gerenciamento de tarefas de um Sistema Operacional
 #include <stdio.h>
-#include <string.h>
 
 // Definindo a struct TCB
 typedef struct {
@@ -22,6 +21,8 @@ typedef struct {
 #define PRONTA 0
 #define EXECUTANDO 1
 #define FINALIZADA 2
+#define TAMANHO_FILA 3
+#define QUANTUM 2
 
 TCB criarTarefa(int id, char *nome, int instrucoes, int sp) {
     TCB t;
@@ -29,7 +30,7 @@ TCB criarTarefa(int id, char *nome, int instrucoes, int sp) {
     snprintf(t.nome, sizeof(t.nome), "%s", nome);
     t.estado = PRONTA;
     t.pc = 0;
-    t.quantum = 2;
+    t.quantum = QUANTUM;
     t.instrucoes = instrucoes;
     t.memoria = 0;
     t.sp = sp;
@@ -40,25 +41,29 @@ TCB criarTarefa(int id, char *nome, int instrucoes, int sp) {
     return t;
 }
 
+void imprimirEstadoFila(TCB fila[], int tamanhoFila) {
+    printf("\nEstado da Fila:\n");
+    for(int i = 0; i < tamanhoFila; i++) {
+        printf("ID: %d, nome: %s, Estado: %d, PC:%d, Instrucoes restantes: %d, Memoria: %d, SP: %d\n",
+                fila[i].id, fila[i].nome, fila[i].estado, fila[i].pc, fila[i].instrucoes, fila[i].memoria, fila[i].sp);
+    }
+}
+
 int main() {
     // Criando as tarefas
     TCB T1 = criarTarefa(1, "Tarefa 1", 6, 100);
     TCB T2 = criarTarefa(2, "Tarefa 2", 4, 200);
     TCB T3 = criarTarefa(3, "Tarefa 3", 8, 300);
     
-    TCB fila[3] = {T1, T2, T3}; // Onde as tarefas serão armazenadas
+    TCB fila[TAMANHO_FILA] = {T1, T2, T3}; // Onde as tarefas serão armazenadas
 
-    printf("\nFila:\n");
-    for(int i = 0; i < 3; i++) {
-        printf("ID: %d, nome: %s, Estado: %d, PC:%d, Instrucoes restantes: %d, Memoria: %d, SP: %d\n",
-                fila[i].id, fila[i].nome, fila[i].estado, fila[i].pc, fila[i].instrucoes, fila[i].memoria, fila[i].sp);
-    }
+    imprimirEstadoFila(fila, TAMANHO_FILA);
     
     int tarefasFinalizadas = 0;
     int indice = 0;
 
     // TODO: melhorar, tá se tornando meio macarronico
-    while(tarefasFinalizadas < 3) {
+    while(tarefasFinalizadas < TAMANHO_FILA) {
         // Verifica se a tarefa atual nao foi finalizada ainda
         if(fila[indice].estado != FINALIZADA) {
             fila[indice].estado = EXECUTANDO; // Muda o estado da tarefa para executando
@@ -84,34 +89,10 @@ int main() {
             fila[indice].estado = PRONTA; // Caso não esteja finalizada, volta a estar pronta
         }
 
-        indice = (indice + 1) % 3; // Indice circular
+        indice = (indice + 1) % TAMANHO_FILA; // Indice circular
     }
 
-    printf("\nFila:\n");
-    for(int i = 0; i < 3; i++) {
-        printf("ID: %d, nome: %s, Estado: %d, PC:%d, Instrucoes restantes: %d, Memoria: %d, SP: %d\n",
-                fila[i].id, fila[i].nome, fila[i].estado, fila[i].pc, fila[i].instrucoes, fila[i].memoria, fila[i].sp);
-    }
-
-// Considere um quantum de 2 instruções.
-// Quando o quantum terminar:
-    // 1 A tarefa atual deixa a CPU;
-    // 2 Seu contexto permanece armazenado em sua TCB;
-    // 3 Seu estado passa para PRONTA;
-    // 4 A pr´oxima tarefa da fila ´e selecionada;
-    // 5 O contexto da nova tarefa ´e carregado;
-    // 6 Seu estado passa para EXECUTANDO;
-    // 7 A execu¸c˜ao continua a partir de seu PC.
-// Regra fundamental
-// Uma tarefa n˜ao come¸ca novamente do in´ıcio.
-// Ela continua a partir do contexto armazenado em sua TCB.
-
-
-// Execução:
-// Troca de contexto Salvando T1: PC = 2 Carregando T2: PC = 0
-// Executando T2 PC: 0 -> 1 -> 2
-// Troca de contexto Salvando T2: PC = 2 Carregando T3: PC = 0
-// Quando T1 voltar a executar:
-// T1 continua em PC = 2
+    imprimirEstadoFila(fila, TAMANHO_FILA);
+    
 }
 
