@@ -21,6 +21,8 @@ typedef struct {
 #define PRONTA 0
 #define EXECUTANDO 1
 #define FINALIZADA 2
+
+// Outras constantes
 #define TAMANHO_FILA 3
 #define QUANTUM 2
 
@@ -66,7 +68,8 @@ int main() {
     TCB T2 = criarTarefa(2, "Tarefa 2", 4, 200);
     TCB T3 = criarTarefa(3, "Tarefa 3", 8, 300);
     
-    TCB fila[TAMANHO_FILA] = {T1, T2, T3}; // Onde as tarefas serão armazenadas
+    // Armazenando as tarefas na fila
+    TCB fila[TAMANHO_FILA] = {T1, T2, T3};
 
     printf("\n-------- ESTADO INICIAL DA FILA --------");
     imprimirEstadoFila(fila, TAMANHO_FILA);
@@ -78,17 +81,17 @@ int main() {
         // Verifica se a tarefa atual nao foi finalizada ainda
         if(fila[indice].estado != FINALIZADA) {
             fila[indice].estado = EXECUTANDO; // Muda o estado da tarefa para executando
-        }
-
-        executarTarefa(&fila[indice]); // Passando o endereço da tarefa
-        
-        imprimirEstadoFila(fila, TAMANHO_FILA);
-        
-        if (fila[indice].instrucoes == 0 && fila[indice].estado != FINALIZADA){
-            fila[indice].estado = FINALIZADA; // Quando acaba as instruções, a tarefa tá finalizada
-            tarefasFinalizadas++;
-        } else if (fila[indice].estado != FINALIZADA) {
-            fila[indice].estado = PRONTA; // Caso não esteja finalizada, volta a estar pronta
+            
+            executarTarefa(&fila[indice]); // Passando o endereço da tarefa
+            
+            imprimirEstadoFila(fila, TAMANHO_FILA);
+            
+            if(fila[indice].instrucoes == 0) {
+                fila[indice].estado = FINALIZADA;
+                tarefasFinalizadas++;
+            } else {
+                fila[indice].estado = PRONTA;
+            }
         }
 
         indice = (indice + 1) % TAMANHO_FILA; // Indice circular
