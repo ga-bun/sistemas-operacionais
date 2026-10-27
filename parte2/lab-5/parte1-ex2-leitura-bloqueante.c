@@ -51,12 +51,12 @@ int main() {
     close(fd[0]);
     printf("[pai] aguardando 5 segundos\n");
     sleep(5);
-    if(write(fd[1], MENSAGEM, srtlen(MENSAGEM)) == -1){
+    if(write(fd[1], MENSAGEM, strlen(MENSAGEM)) == -1){
         perror("write");
     }
     printf("[pai] mensagem escrita no pipe\n");
     close(fd[1]);
     wait(NULL);
-    
+
     return EXIT_SUCCESS;
 }
