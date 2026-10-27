@@ -60,17 +60,17 @@ int main() // Processo pai
         _exit(EXIT_FAILURE);
     }
 
-    pid1 = fork(); // Cria fork 2 - filho 2
+    pid2 = fork(); // Cria fork 2 - filho 2
 
-    if (pid1 == -1)
+    if (pid2 == -1)
     {
         perror("fork");
         return EXIT_FAILURE;
     }
 
-    if (pid1 == 0)
+    if (pid2 == 0)
     {
-        if (dup2(fd[0], STDOUT_FILENO) == -1) // dup2: Esse comando redireciona a saída padrão para o extremo de leitura do pipe (`fd[0]`)
+        if (dup2(fd[0], STDIN_FILENO) == -1) // dup2: Esse comando redireciona a saída padrão para o extremo de leitura do pipe (`fd[0]`)
         {
             perror("dup2");
             _exit(EXIT_FAILURE);
