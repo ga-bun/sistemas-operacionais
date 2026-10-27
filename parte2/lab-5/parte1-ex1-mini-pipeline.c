@@ -1,3 +1,4 @@
+// Exercício 1 – Mini Pipeline
 // Implemente um programa equivalente ao comando:
 
 // ls | wc -l
