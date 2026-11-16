@@ -1,0 +1,110 @@
+././build/leitores-escritores-a.exe
+[Leitor 1] entrou, leitores ativos=1, valor=0
+[Leitor 0] entrou, leitores ativos=2, valor=0
+[Leitor 2] entrou, leitores ativos=3, valor=0
+[Leitor 3] entrou, leitores ativos=4, valor=0
+[Leitor 4] entrou, leitores ativos=5, valor=0
+[Leitor 5] entrou, leitores ativos=6, valor=0
+[Leitor 6] entrou, leitores ativos=7, valor=0
+[Leitor 7] entrou, leitores ativos=8, valor=0
+[Leitor 8] entrou, leitores ativos=9, valor=0
+[Leitor 9] entrou, leitores ativos=10, valor=0
+[Leitor 6] leu valor=0
+[Leitor 6] entrou, leitores ativos=10, valor=0
+[Leitor 4] leu valor=0
+[Leitor 4] entrou, leitores ativos=10, valor=0
+[Leitor 2] leu valor=0
+[Leitor 2] entrou, leitores ativos=10, valor=0
+[Leitor 0] leu valor=0
+[Leitor 0] entrou, leitores ativos=10, valor=0
+[Leitor 3] leu valor=0
+[Leitor 3] entrou, leitores ativos=10, valor=0
+[Leitor 5] leu valor=0
+[Leitor 5] entrou, leitores ativos=10, valor=0
+[Leitor 1] leu valor=0
+[Leitor 1] entrou, leitores ativos=10, valor=0
+[Leitor 9] leu valor=0
+[Leitor 8] leu valor=0
+[Leitor 8] entrou, leitores ativos=10, valor=0
+[Leitor 9] entrou, leitores ativos=10, valor=0
+[Leitor 7] leu valor=0
+[Leitor 7] entrou, leitores ativos=10, valor=0
+[Leitor 0] leu valor=0
+[Leitor 0] entrou, leitores ativos=10, valor=0
+[Leitor 6] leu valor=0
+[Leitor 6] entrou, leitores ativos=10, valor=0
+[Leitor 5] leu valor=0
+[Leitor 5] entrou, leitores ativos=10, valor=0
+[Leitor 2] leu valor=0
+[Leitor 2] entrou, leitores ativos=10, valor=0
+[Leitor 4] leu valor=0
+[Leitor 4] entrou, leitores ativos=10, valor=0
+[Leitor 1] leu valor=0
+[Leitor 1] entrou, leitores ativos=10, valor=0
+[Leitor 3] leu valor=0
+[Leitor 3] entrou, leitores ativos=10, valor=0
+[Leitor 8] leu valor=0
+[Leitor 8] entrou, leitores ativos=10, valor=0
+[Leitor 0] leu valor=0
+[Leitor 0] entrou, leitores ativos=10, valor=0
+[Leitor 7] leu valor=0
+[Leitor 7] entrou, leitores ativos=10, valor=0
+[Leitor 9] leu valor=0
+[Leitor 9] entrou, leitores ativos=10, valor=0
+[Leitor 2] leu valor=0
+[Leitor 2] entrou, leitores ativos=10, valor=0
+[Leitor 0] leu valor=0
+[Leitor 0] entrou, leitores ativos=10, valor=0
+[Leitor 5] leu valor=0
+[Leitor 5] entrou, leitores ativos=10, valor=0
+[Leitor 4] leu valor=0
+[Leitor 4] entrou, leitores ativos=10, valor=0
+[Leitor 6] leu valor=0
+[Leitor 6] entrou, leitores ativos=10, valor=0
+[Leitor 1] leu valor=0
+[Leitor 1] entrou, leitores ativos=10, valor=0
+[Leitor 3] leu valor=0
+[Leitor 3] entrou, leitores ativos=10, valor=0
+[Leitor 7] leu valor=0
+[Leitor 8] leu valor=0
+[Leitor 8] entrou, leitores ativos=10, valor=0
+[Leitor 7] entrou, leitores ativos=10, valor=0
+[Leitor 6] leu valor=0
+[Leitor 6] entrou, leitores ativos=10, valor=0
+[Leitor 4] leu valor=0
+[Leitor 3] leu valor=0
+[Leitor 3] entrou, leitores ativos=10, valor=0
+[Leitor 1] leu valor=0
+[Leitor 1] entrou, leitores ativos=10, valor=0
+[Leitor 0] leu valor=0
+[Leitor 5] leu valor=0
+[Leitor 5] entrou, leitores ativos=9, valor=0
+[Leitor 2] leu valor=0
+[Leitor 2] entrou, leitores ativos=9, valor=0
+[Leitor 4] entrou, leitores ativos=10, valor=0
+[Leitor 9] leu valor=0
+[Leitor 9] entrou, leitores ativos=9, valor=0
+[Leitor 8] leu valor=0
+[Leitor 8] entrou, leitores ativos=9, valor=0
+[Leitor 7] leu valor=0
+[Leitor 7] entrou, leitores ativos=9, valor=0
+[Leitor 6] leu valor=0
+[Leitor 5] leu valor=0
+[Leitor 4] leu valor=0
+[Leitor 3] leu valor=0
+[Leitor 2] leu valor=0
+[Leitor 1] leu valor=0
+[Leitor 8] leu valor=0
+[Leitor 7] leu valor=0
+[Leitor 9] leu valor=0
+[Escritor] entrou para escrever. valor anterior = 0
+[Escritor] escreveu valor 1
+[Leitor 9] entrou, leitores ativos=1, valor=1
+[Leitor 9] leu valor=1
+[Escritor] entrou para escrever. valor anterior = 1
+[Escritor] escreveu valor 2
+[Escritor] entrou para escrever. valor anterior = 2
+[Escritor] escreveu valor 3
+[Escritor] entrou para escrever. valor anterior = 3
+[Escritor] escreveu valor 4
+Vers├úo A conclu├¡da. Valor final: 4

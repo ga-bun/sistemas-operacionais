@@ -1,0 +1,124 @@
+./build/produtor-consumidor.exe
+
+[Produtor 0] inseriu item 0 (seq=0) | ocupadas=1
+[Produtor 0] inseriu item 1 (seq=1) | ocupadas=2
+[Produtor 0] inseriu item 2 (seq=2) | ocupadas=3
+[Produtor 2] inseriu item 200 (seq=0) | ocupadas=4
+[Consumidor 0] consumiu produtor=0 item=0 | ocupadas=3
+[Produtor 1] inseriu item 100 (seq=0) | ocupadas=4
+[Consumidor 1] consumiu produtor=0 item=1 | ocupadas=3
+[Consumidor 2] consumiu produtor=0 item=2 | ocupadas=2
+[Consumidor 0] consumiu produtor=2 item=200 | ocupadas=1
+[Produtor 0] inseriu item 3 (seq=3) | ocupadas=2
+[Consumidor 1] consumiu produtor=1 item=100 | ocupadas=1
+[Produtor 2] inseriu item 201 (seq=1) | ocupadas=2
+[Produtor 2] inseriu item 202 (seq=2) | ocupadas=3
+[Produtor 0] inseriu item 4 (seq=4) | ocupadas=4
+[Consumidor 2] consumiu produtor=0 item=3 | ocupadas=3
+[Consumidor 2] consumiu produtor=2 item=201 | ocupadas=2
+[Consumidor 0] consumiu produtor=2 item=202 | ocupadas=1
+[Consumidor 1] consumiu produtor=0 item=4 | ocupadas=0
+[Produtor 2] inseriu item 203 (seq=3) | ocupadas=1
+[Produtor 1] inseriu item 101 (seq=1) | ocupadas=2
+[Produtor 0] inseriu item 5 (seq=5) | ocupadas=3
+[Produtor 2] inseriu item 204 (seq=4) | ocupadas=4
+[Consumidor 2] consumiu produtor=2 item=203 | ocupadas=3
+[Produtor 1] inseriu item 102 (seq=2) | ocupadas=4
+[Consumidor 0] consumiu produtor=1 item=101 | ocupadas=3
+[Consumidor 1] consumiu produtor=0 item=5 | ocupadas=2
+[Consumidor 2] consumiu produtor=2 item=204 | ocupadas=1
+[Produtor 0] inseriu item 6 (seq=6) | ocupadas=2
+[Produtor 0] inseriu item 7 (seq=7) | ocupadas=3
+[Produtor 2] inseriu item 205 (seq=5) | ocupadas=4
+[Produtor 1] inseriu item 103 (seq=3) | ocupadas=5
+[Consumidor 0] consumiu produtor=1 item=102 | ocupadas=4
+[Consumidor 1] consumiu produtor=0 item=6 | ocupadas=3
+[Consumidor 2] consumiu produtor=0 item=7 | ocupadas=2
+[Consumidor 0] consumiu produtor=2 item=205 | ocupadas=1
+[Produtor 0] inseriu item 8 (seq=8) | ocupadas=2
+[Produtor 0] inseriu item 9 (seq=9) | ocupadas=3
+[Produtor 2] inseriu item 206 (seq=6) | ocupadas=4
+[Produtor 1] inseriu item 104 (seq=4) | ocupadas=5
+[Consumidor 1] consumiu produtor=1 item=103 | ocupadas=4
+[Consumidor 2] consumiu produtor=0 item=8 | ocupadas=3
+[Consumidor 0] consumiu produtor=0 item=9 | ocupadas=2
+[Consumidor 1] consumiu produtor=2 item=206 | ocupadas=1
+[Produtor 0] inseriu item 10 (seq=10) | ocupadas=2
+[Consumidor 2] consumiu produtor=1 item=104 | ocupadas=1
+[Produtor 2] inseriu item 207 (seq=7) | ocupadas=2
+[Produtor 1] inseriu item 105 (seq=5) | ocupadas=3
+[Produtor 0] inseriu item 11 (seq=11) | ocupadas=4
+[Consumidor 0] consumiu produtor=0 item=10 | ocupadas=3
+[Consumidor 0] consumiu produtor=2 item=207 | ocupadas=2
+[Consumidor 1] consumiu produtor=1 item=105 | ocupadas=1
+[Consumidor 2] consumiu produtor=0 item=11 | ocupadas=0
+[Produtor 1] inseriu item 106 (seq=6) | ocupadas=1
+[Produtor 1] inseriu item 107 (seq=7) | ocupadas=2
+[Produtor 0] inseriu item 12 (seq=12) | ocupadas=3
+[Produtor 2] inseriu item 208 (seq=8) | ocupadas=4
+[Consumidor 0] consumiu produtor=1 item=106 | ocupadas=3
+[Consumidor 0] consumiu produtor=1 item=107 | ocupadas=2
+[Consumidor 1] consumiu produtor=0 item=12 | ocupadas=1
+[Consumidor 2] consumiu produtor=2 item=208 | ocupadas=0
+[Produtor 1] inseriu item 108 (seq=8) | ocupadas=1
+[Produtor 0] inseriu item 13 (seq=13) | ocupadas=2
+[Produtor 2] inseriu item 209 (seq=9) | ocupadas=3
+[Produtor 1] inseriu item 109 (seq=9) | ocupadas=4
+[Consumidor 0] consumiu produtor=1 item=108 | ocupadas=3
+[Consumidor 0] consumiu produtor=0 item=13 | ocupadas=2
+[Consumidor 1] consumiu produtor=2 item=209 | ocupadas=1
+[Consumidor 2] consumiu produtor=1 item=109 | ocupadas=0
+[Produtor 0] inseriu item 14 (seq=14) | ocupadas=1
+[Produtor 2] inseriu item 210 (seq=10) | ocupadas=2
+[Produtor 1] inseriu item 110 (seq=10) | ocupadas=3
+[Produtor 0] inseriu item 15 (seq=15) | ocupadas=4
+[Consumidor 0] consumiu produtor=0 item=14 | ocupadas=3
+[Produtor 2] inseriu item 211 (seq=11) | ocupadas=4
+[Consumidor 1] consumiu produtor=2 item=210 | ocupadas=3
+[Consumidor 1] consumiu produtor=1 item=110 | ocupadas=2
+[Consumidor 0] consumiu produtor=0 item=15 | ocupadas=1
+[Produtor 1] inseriu item 111 (seq=11) | ocupadas=2
+[Consumidor 2] consumiu produtor=2 item=211 | ocupadas=1
+[Produtor 0] inseriu item 16 (seq=16) | ocupadas=2
+[Produtor 0] inseriu item 17 (seq=17) | ocupadas=3
+[Produtor 1] inseriu item 112 (seq=12) | ocupadas=4
+[Consumidor 1] consumiu produtor=1 item=111 | ocupadas=3
+[Consumidor 1] consumiu produtor=0 item=16 | ocupadas=2
+[Consumidor 0] consumiu produtor=0 item=17 | ocupadas=1
+[Consumidor 2] consumiu produtor=1 item=112 | ocupadas=0
+[Produtor 0] inseriu item 18 (seq=18) | ocupadas=1
+[Produtor 0] inseriu item 19 (seq=19) | ocupadas=2
+[Produtor 1] inseriu item 113 (seq=13) | ocupadas=3
+[Produtor 2] inseriu item 212 (seq=12) | ocupadas=4
+[Consumidor 1] consumiu produtor=0 item=18 | ocupadas=3
+[Consumidor 1] consumiu produtor=0 item=19 | ocupadas=2
+[Produtor 1] inseriu item 114 (seq=14) | ocupadas=3
+[Produtor 1] inseriu item 115 (seq=15) | ocupadas=4
+[Produtor 2] inseriu item 213 (seq=13) | ocupadas=5
+[Consumidor 0] consumiu produtor=1 item=113 | ocupadas=4
+[Consumidor 0] consumiu produtor=2 item=212 | ocupadas=3
+[Consumidor 1] consumiu produtor=1 item=114 | ocupadas=2
+[Consumidor 2] consumiu produtor=1 item=115 | ocupadas=1
+[Produtor 1] inseriu item 116 (seq=16) | ocupadas=2
+[Consumidor 0] consumiu produtor=2 item=213 | ocupadas=1
+[Produtor 2] inseriu item 214 (seq=14) | ocupadas=2
+[Produtor 2] inseriu item 215 (seq=15) | ocupadas=3
+[Consumidor 1] consumiu produtor=1 item=116 | ocupadas=2
+[Consumidor 2] consumiu produtor=2 item=214 | ocupadas=1
+[Produtor 1] inseriu item 117 (seq=17) | ocupadas=2
+[Produtor 1] inseriu item 118 (seq=18) | ocupadas=3
+[Consumidor 0] consumiu produtor=2 item=215 | ocupadas=2
+[Produtor 2] inseriu item 216 (seq=16) | ocupadas=3
+[Produtor 2] inseriu item 217 (seq=17) | ocupadas=4
+[Produtor 1] inseriu item 119 (seq=19) | ocupadas=5
+[Consumidor 2] consumiu produtor=1 item=117 | ocupadas=4
+[Consumidor 2] consumiu produtor=1 item=118 | ocupadas=3
+[Consumidor 2] consumiu produtor=2 item=216 | ocupadas=2
+[Consumidor 2] consumiu produtor=2 item=217 | ocupadas=1
+[Consumidor 1] consumiu produtor=1 item=119 | ocupadas=0
+[Produtor 2] inseriu item 218 (seq=18) | ocupadas=1
+[Produtor 2] inseriu item 219 (seq=19) | ocupadas=2
+[Consumidor 2] consumiu produtor=2 item=218 | ocupadas=1
+[Consumidor 1] consumiu produtor=2 item=219 | ocupadas=0
+Total de itens produzidos: 60
+Todos os itens foram consumidos com sucesso.

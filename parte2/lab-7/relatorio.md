@@ -71,3 +71,5 @@ Não, só demonstra que teve atraso na execução. A inanição é uma possibili
 
 
 ## Registro de execução
+
+Estão em lab-7/registro-de-execucao
