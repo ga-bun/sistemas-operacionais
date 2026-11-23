@@ -1,0 +1,46 @@
+/* Só o que o Bootstrap não cobre: RAM colorida, quadro piscando e pequenas animações. */
+.min-w-0 { min-width: 0; }
+.font-sans-serif { font-family: system-ui, sans-serif; }
+
+.event-log { max-height: 200px; overflow-y: auto; }
+
+.ram-row { background: #fff; }
+.ram-row.is-owned { color: #fff; }
+.ram-row.is-owned .ram-end { color: rgba(255, 255, 255, 0.8); }
+.ram-end { color: #6c757d; }
+.ram-row.is-free { color: #6c757d; background: #f8f9fa; border-style: dashed !important; }
+.ram-row.area-tables { background: #e7f5ff; border-color: #74c0fc !important; }
+.ram-row.area-kernel { background: #e9ecef; }
+.ram-row.area-reserved {
+  background: repeating-linear-gradient(45deg, #e9ecef, #e9ecef 8px, #dee2e6 8px, #dee2e6 16px);
+  color: #495057;
+}
+.ram-row.selectable { cursor: pointer; }
+.ram-row.selectable:hover { outline: 2px solid #0d6efd; }
+
+.ram-row.flash { animation: frame-flash 0.5s ease-in-out 4; }
+.ram-row.flash-error { animation: frame-flash-error 0.5s ease-in-out 4; }
+
+@keyframes frame-flash {
+  0%, 100% { box-shadow: none; filter: none; }
+  50% { box-shadow: 0 0 0 4px #ffd43b, 0 0 14px 4px #ffd43b; filter: brightness(1.25); }
+}
+
+@keyframes frame-flash-error {
+  0%, 100% { box-shadow: none; }
+  50% { box-shadow: 0 0 0 4px #fa5252, 0 0 14px 4px #fa5252; }
+}
+
+.step-in { animation: step-in 0.35s ease-out; }
+
+@keyframes step-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+
+.reg-updated { animation: reg-pop 0.9s ease-out; }
+
+@keyframes reg-pop {
+  0% { background: #ffe066; }
+  100% { background: transparent; }
+}
