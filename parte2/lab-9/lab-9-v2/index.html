@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simulador de Substituição de Páginas</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="js/algoritmos.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Simulador de Substituição de Páginas</h1>
+    <p>FIFO · LRU · OPT · RANDOM — memória virtual por paginação </p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Entrada</h2>
+      <div class="campos">
+        <label>Quadros de memória
+          <input type="number" id="quadros" min="1" max="50" value="3">
+        </label>
+        <label>Sequência de referências a páginas
+          <input type="text" id="sequencia" value="7 0 1 2 0 3 0 4 2 3 0 3 2 1 2 0 1 7 0 1">
+        </label>
+      </div>
+      <div class="botoes">
+        <button id="btnAuto">Executar algoritmos (automático)</button>
+        <button id="btnManual">Modo manual (FIFO)</button>
+        <button id="btnGrafico">Gerar gráfico</button>
+      </div>
+      <div class="botoes">
+        <button id="btnExemplo" class="secundario">Exemplo clássico</button>
+        <button id="btnBelady" class="secundario">Exemplo da anomalia de Belády</button>
+      </div>
+      <p id="erro" class="erro"></p>
+    </section>
+
+    <section id="secManual" class="card" hidden>
+      <h2>Modo manual – FIFO</h2>
+      <p class="suave">Clique na próxima página da sequência (em azul) para acessá-la. Verde = hit, vermelho = falta de página.</p>
+      <div id="manualSequencia" class="chips"></div>
+      <div id="manualEstado"></div>
+      <div class="botoes">
+        <button id="btnProximo" class="secundario">Próximo ▶</button>
+        <button id="btnReiniciar" class="secundario">Reiniciar</button>
+      </div>
+      <h3>Histórico</h3>
+      <div id="manualTabela" class="rolagem"></div>
+    </section>
+
+    <section id="secAuto" class="card" hidden>
+      <h2>Resultados – modo automático</h2>
+      <div id="resumo"></div>
+      <div id="tabelas"></div>
+    </section>
+
+    <section id="secGrafico" class="card" hidden>
+      <h2>Faltas de página × número de quadros</h2>
+      <canvas id="grafico"></canvas>
+      <div class="botoes botoes-grafico">
+        <a id="btnBaixar" class="botao secundario" download="grafico-faltas-de-pagina.png" href="#">Baixar PNG</a>
+      </div>
+      <div id="avisoBelady"></div>
+      <p class="suave">RANDOM é a média de várias execuções, pois o resultado muda a cada vez.</p>
+      <div id="dadosGrafico" class="rolagem"></div>
+    </section>
+  </main>
+</body>
+</html>
